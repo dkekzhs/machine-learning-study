@@ -13,6 +13,7 @@ fish_target = fish["Species"].to_numpy()
 train_input, test_input, train_target, test_target = train_test_split(fish_input, fish_target
 , test_size=0.2, random_state=42)
 
+
 kn = KNeighborsClassifier(n_neighbors=3)
 kn.fit(train_input,train_target)
 
@@ -27,6 +28,7 @@ poly.fit(train_input)
 train_poly = poly.transform(train_input)
 print(train_poly.shape)
 test_ploy = poly.transform(test_input)
+
 
 ss = StandardScaler()
 ss.fit(train_poly)
@@ -43,19 +45,3 @@ lr.fit(train_bream_smelt,target_bream_smelt)
 print(lr.coef_,lr.intercept_)
 print(lr.predict(train_bream_smelt[:5]))
 print(lr.predict_proba(train_bream_smelt[:5]))
-
-decisions = lr.decision_function(train_bream_smelt[:5])
-print(decisions)
-
-from scipy.special import expit
-print(expit(decisions))
-
-lr = LogisticRegression(C=20,max_iter=1000)
-lr.fit(train_scaled , train_target)
-
-print(lr.score(train_scaled,train_target))
-print(lr.score(test_scaled,test_target))
-
-proba = lr.predict_proba(test_scaled[:5])
-print(np.round(proba , decimals=3))
-print(lr.coef_.shape, lr.intercept_.shape)
