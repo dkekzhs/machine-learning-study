@@ -1,4 +1,4 @@
-#교차 검증과 그리드 서치
+ #교차 검증과 그리드 서치
 import pandas as pd
 
 wine = pd.read_csv('https://bit.ly/wine_csv_data')

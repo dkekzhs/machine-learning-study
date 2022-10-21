@@ -4,8 +4,8 @@ from sklearn.linear_model import LinearRegression, Ridge, Lasso
 from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import PolynomialFeatures, StandardScaler
 import numpy as np
-df = pd.read_csv("./HOME_전력거래_정산단가_연료원별.csv")
-df2 = pd.read_csv("./HOME_전력거래_계통한계가격_가중평균SMP.csv")
+df = pd.read_csv("HOME_전력거래_정산단가_연료원별.csv")
+df2 = pd.read_csv("HOME_전력거래_계통한계가격_가중평균SMP.csv")
 
 print(df,df2)
 z1 = df.to_numpy()

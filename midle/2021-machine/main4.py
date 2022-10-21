@@ -1,7 +1,7 @@
 import numpy as np
 import pandas as pd
 from sklearn.model_selection import train_test_split
-
+from sklearn.linear_model import SGDClassifier
 df = pd.read_csv('https://bit.ly/perch_full.data')
 perch_full = df.to_numpy()
 #print(perch_full)
@@ -25,7 +25,7 @@ perch_weight = np.array(
 
      )
 
-target = train_test_split(perch_full, perch_weight, random_stste=42)
+train_input,test_input,train_target,test_target = train_test_split(perch_full, perch_weight, random_stste=42)
 #에포크와 과대 과소 적합
 
 import numpy as np
