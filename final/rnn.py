@@ -46,7 +46,7 @@ model.compile(optimizer=rmsprop, loss='binary_crossentropy', metrics=['accuracy'
 checkpoint_cb = keras.callbacks.ModelCheckpoint('best-simplernn-model.h5')
 early_stopping_cb = keras.callbacks.EarlyStopping(patience=3, restore_best_weights=True)
 
-history = model.fit(train_oh, train_target, epochs=100, batch_size=64, validation_data = (val_oh, val_target), callbacks=[checkpoint_cb, early_stopping_cb])
+history = model.fit(train_oh, train_target, epochs=10, batch_size=64, validation_data = (val_oh, val_target), callbacks=[checkpoint_cb, early_stopping_cb])
 
 plt.plot(history.history['loss'])
 plt.plot(history.history['val_loss'])
